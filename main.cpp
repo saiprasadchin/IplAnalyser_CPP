@@ -7,18 +7,25 @@ using namespace std;
 
 enum sortType
 {
-    BAT_AVERAGE = 1, BAT_STRIKE, SIX_AND_FOURS, SR_WITH_6sAND4s, AVERAGE_WITH_SR, RUNS_AVERAGE
+    BAT_AVERAGE = 1, BAT_STRIKE, SIX_AND_FOURS, SR_WITH_6sAND4s, AVERAGE_WITH_SR, RUNS_AVERAGE, TOP_BOWLER_AVERAGE
 };
 
-string FileName = "MostRunsFile.csv";
+string mostRunsFile = "MostRunsFile.csv";
+string mostWktsFile = "MostWktsFile.csv";
 
 void controller()
 {
-    IPLAnalyzer iplAnalyser;
+    IPLAnalyzer<IPLBatsmanCSV> iplBatsmanAnalyser;
+    iplBatsmanAnalyser.loadIPLData( mostRunsFile );
+    vector<IPLBatsmanCSV*> batsmatList;
+    
+    IPLAnalyzer<IPLBowlerCSV> iplBowlerAnalyser;
+    iplBowlerAnalyser.loadIPLData( mostWktsFile );
+    vector<IPLBowlerCSV*> bowlerList;
+
     InputOutput inputOutput;
-    vector<MostRuns*> sortedList;
-    iplAnalyser.loadIPLData( FileName );
     inputOutput.displayWelcomeMessage();
+
     bool endKey = true;
     while (endKey)
     {
@@ -26,31 +33,40 @@ void controller()
         switch ( choice )
         {
             case BAT_AVERAGE:
-                sortedList = iplAnalyser.sortBatsMan( batingAverage );
+                batsmatList = iplBatsmanAnalyser.sortBatsManAndBowler( batingAverage );
+                inputOutput.displayToUser( batsmatList );
                 break;
             case BAT_STRIKE:
-                sortedList = iplAnalyser.sortBatsMan( batingStrike );
+                batsmatList = iplBatsmanAnalyser.sortBatsManAndBowler( batingStrike );
+                inputOutput.displayToUser( batsmatList );
                 break;
             case SIX_AND_FOURS:
-                sortedList = iplAnalyser.sortBatsMan( foursAndSixes );
+                batsmatList = iplBatsmanAnalyser.sortBatsManAndBowler( foursAndSixes );
+                inputOutput.displayToUser( batsmatList );
                 break;
             case SR_WITH_6sAND4s:
-                sortedList = iplAnalyser.sortBatsMan( strikeWithfoursAndSixes );
+                batsmatList = iplBatsmanAnalyser.sortBatsManAndBowler( strikeWithfoursAndSixes );
+                inputOutput.displayToUser( batsmatList );
                 break;
             case AVERAGE_WITH_SR:
-                sortedList = iplAnalyser.sortBatsMan( strikeWithAverage );
+                batsmatList = iplBatsmanAnalyser.sortBatsManAndBowler( strikeWithAverage );
+                inputOutput.displayToUser( batsmatList );
                 break;
             case RUNS_AVERAGE:
-                sortedList = iplAnalyser.sortBatsMan( ransWithAverage );
+                batsmatList = iplBatsmanAnalyser.sortBatsManAndBowler( ransWithAverage );
+                inputOutput.displayToUser( batsmatList );
                 break;
-            case 7:
+            case TOP_BOWLER_AVERAGE:
+                bowlerList = iplBowlerAnalyser.sortBatsManAndBowler( bowlingAverage );
+                inputOutput.displayToUser( bowlerList );
+                break;
+            case 8:
                 endKey = false;
                 break;
             default:
                 cout << "Invalid Input" << endl;
                 break;
         }
-        inputOutput.displayToUser( sortedList );
     }
 }
 

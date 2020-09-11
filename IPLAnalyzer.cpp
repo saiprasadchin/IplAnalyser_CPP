@@ -1,27 +1,29 @@
 #include<iostream>
 #include<vector>
-#include "MostRuns.h"
+#include "IPLBatsmanCSV.h"
+#include "IPLBowlerCSV.h"
 #include "CsvFileOperation.cpp"
 #include <algorithm>
 
 using namespace std;
 
+template <class T>
 class IPLAnalyzer
 {
 private:
-    vector<MostRuns*> statisticList;
+    vector<T*> statisticList;
 public:
     IPLAnalyzer() {}
 
     void loadIPLData( string csvFilePath )
     {
-        CsvFileOperation<MostRuns> csvObj;
+        CsvFileOperation<T> csvObj;
         statisticList = csvObj.readDataFromFile( csvFilePath );
     }
     
-    vector<MostRuns*> sortBatsMan( bool(*sortFunc )(MostRuns*, MostRuns*) )
+    vector<T*> sortBatsManAndBowler( bool(*sortFunc )(T*, T*) )
     {
-        vector<MostRuns*> sortedList = statisticList;
+        vector<T*> sortedList = statisticList;
         sort(sortedList.begin() + 1, sortedList.end(), sortFunc );
         return sortedList;
     }

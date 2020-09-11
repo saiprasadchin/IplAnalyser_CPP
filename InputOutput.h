@@ -1,7 +1,8 @@
 #pragma once
 #include<iostream>
 #include<vector>
-#include "MostRuns.h"
+#include "IPLBatsmanCSV.h"
+#include "IPLBowlerCSV.h"
 
 using namespace std;
 
@@ -9,5 +10,6 @@ class InputOutput {
 public:
     int getUserChoice();
     void displayWelcomeMessage();
-    void displayToUser( vector<MostRuns*> );
+    void displayToUser( vector<IPLBatsmanCSV*> );
+    void displayToUser( vector<IPLBowlerCSV*> );
 };

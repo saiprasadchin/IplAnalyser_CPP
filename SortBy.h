@@ -1,43 +1,50 @@
-#include "MostRuns.h"
+#include "IPLBatsmanCSV.h"
 
-bool compareByAverage(MostRuns *avg1, MostRuns *avg2) 
+bool compareByAverage(IPLBatsmanCSV *avg1, IPLBatsmanCSV *avg2) 
 { 
     return avg1->getAverage() > avg2->getAverage();
 }
 
 auto batingAverage = &compareByAverage;
 
-bool compareByStrikeRate(MostRuns *avg1, MostRuns *avg2) 
+bool compareByStrikeRate(IPLBatsmanCSV *avg1, IPLBatsmanCSV *avg2) 
 { 
     return avg1->getStrike() > avg2->getStrike();
 }
 
 auto batingStrike = &compareByStrikeRate;
 
-bool compareByFourAndSix(MostRuns *avg1, MostRuns *avg2) 
+bool compareByFourAndSix(IPLBatsmanCSV *avg1, IPLBatsmanCSV *avg2) 
 { 
     return avg1->getFoursAndSixes() > avg2->getFoursAndSixes();
 }
 
 auto foursAndSixes = &compareByFourAndSix;
 
-bool compareByStrikeRtWithFourAndSix(MostRuns *avg1, MostRuns *avg2) 
+bool compareByStrikeRtWithFourAndSix(IPLBatsmanCSV *avg1, IPLBatsmanCSV *avg2) 
 { 
     return (avg1->getFoursAndSixes() > avg2->getFoursAndSixes()) && (avg1->getStrike() > avg2->getStrike());
 }
 
 auto strikeWithfoursAndSixes = &compareByStrikeRtWithFourAndSix;
 
-bool compareByStrikeRtWithAverage(MostRuns *avg1, MostRuns *avg2) 
+bool compareByStrikeRtWithAverage(IPLBatsmanCSV *avg1, IPLBatsmanCSV *avg2) 
 { 
     return (avg1->getAverage() > avg2->getAverage()) && (avg1->getStrike() > avg2->getStrike());
 }
 
 auto strikeWithAverage = &compareByStrikeRtWithAverage;
 
-bool compareByMaxRunsWithAverage(MostRuns *avg1, MostRuns *avg2) 
+bool compareByMaxRunsWithAverage(IPLBatsmanCSV *avg1, IPLBatsmanCSV *avg2) 
 { 
     return (avg1->getRuns() > avg2->getRuns()) && (avg1->getAverage() > avg2->getAverage());
 }
 
 auto ransWithAverage = &compareByMaxRunsWithAverage;
+
+bool compareByBowlingAverage(IPLBowlerCSV *avg1, IPLBowlerCSV *avg2) 
+{ 
+    return avg1->getAverage() > avg2->getAverage();
+}
+
+auto bowlingAverage = &compareByBowlingAverage;

@@ -1,11 +1,11 @@
-#include "MostRuns.h"
+#include "IPLBatsmanCSV.h"
 
-string* MostRuns::getPosition()
+string* IPLBatsmanCSV::getPosition()
 {
     return &POS;
 }
 
-double MostRuns::convertToDouble( string field )
+double IPLBatsmanCSV::convertToDouble( string field )
 {
     int sum = 0;
     double decimal = 0.1;
@@ -23,7 +23,7 @@ double MostRuns::convertToDouble( string field )
         return decimal = sum/decimal;
 }
 
-int MostRuns::convertToInt( string field )
+int IPLBatsmanCSV::convertToInt( string field )
 {
     int sum = 0;
     for ( int i = 0; i < field.length(); i++ )
@@ -35,37 +35,37 @@ int MostRuns::convertToInt( string field )
     return sum;
 }
 
-double MostRuns::getAverage()
+double IPLBatsmanCSV::getAverage()
 {
     return convertToDouble( batingAverage );
 }
 
-double MostRuns::getStrike()
+double IPLBatsmanCSV::getStrike()
 {
     return convertToDouble( strikeRate );
 }
 
-int MostRuns::getFours()
+int IPLBatsmanCSV::getFours()
 {
     return convertToInt( fours );
 }
 
-int MostRuns::getSixes()
+int IPLBatsmanCSV::getSixes()
 {
     return convertToInt( sixes );
 }
 
-int MostRuns::getFoursAndSixes()
+int IPLBatsmanCSV::getFoursAndSixes()
 {
     return getSixes() + getFours();
 }
 
-int MostRuns::getRuns()
+int IPLBatsmanCSV::getRuns()
 {
     return convertToInt( runs );
 }
 
-void MostRuns::display()
+void IPLBatsmanCSV::display()
 {
     cout <<"Player Name   : " << this->playerName <<endl;
     cout <<"Bating Avg    : " << this->batingAverage <<endl;

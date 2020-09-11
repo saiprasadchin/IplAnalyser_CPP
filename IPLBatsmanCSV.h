@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class MostRuns
+class IPLBatsmanCSV
 {
 private:
     string POS;
@@ -23,7 +23,7 @@ private:
     string sixes;
 
 public:
-    MostRuns() {}
+    IPLBatsmanCSV() {}
     string* getPosition();
     double convertToDouble( string );
     int convertToInt( string );
