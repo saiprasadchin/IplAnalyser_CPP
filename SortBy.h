@@ -27,3 +27,10 @@ bool compareByStrikeRtWithFourAndSix(MostRuns *avg1, MostRuns *avg2)
 }
 
 auto strikeWithfoursAndSixes = &compareByStrikeRtWithFourAndSix;
+
+bool compareByStrikeRtWithAverage(MostRuns *avg1, MostRuns *avg2) 
+{ 
+    return (avg1->getAverage() > avg2->getAverage()) && (avg1->getStrike() > avg2->getStrike());
+}
+
+auto strikeWithAverage = &compareByStrikeRtWithAverage;
