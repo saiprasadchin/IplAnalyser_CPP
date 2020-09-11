@@ -23,6 +23,17 @@ double MostRuns::convertToDouble( string field )
         return decimal = sum/decimal;
 }
 
+int MostRuns::convertToInt( string field )
+{
+    int sum = 0;
+    for ( int i = 0; i < field.length(); i++ )
+    {
+        int digit = field[i];
+        digit = digit - 48;
+        sum =  sum * 10 + digit;
+    }
+    return sum;
+}
 
 double MostRuns::getAverage()
 {
@@ -34,8 +45,24 @@ double MostRuns::getStrike()
     return convertToDouble( strikeRate );
 }
 
+int MostRuns::getFours()
+{
+    return convertToInt( fours );
+}
+
+int MostRuns::getSixes()
+{
+    return convertToInt( sixes );
+}
+
+int MostRuns::getFoursAndSixes()
+{
+    return getSixes() + getFours();
+}
+
 void MostRuns::display() {
-    cout << this->playerName <<endl;
-    cout << this->batingAverage <<endl;
-    cout << this->strikeRate <<endl;
+    cout <<"Player Name   : " << this->playerName <<endl;
+    cout <<"Bating Avg    : " << this->batingAverage <<endl;
+    cout <<"Bating Strike : " << this->strikeRate <<endl;
+    cout <<"Four And Six  : " << this->fours <<"  "<< this->sixes <<endl;
 }

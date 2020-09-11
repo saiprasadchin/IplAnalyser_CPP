@@ -12,6 +12,7 @@ void controller()
     IPLAnalyzer iplAnalyser;
     InputOutput inputOutput;
     vector<MostRuns*> sortedList;
+    iplAnalyser.loadIPLData( FileName );
     inputOutput.displayWelcomeMessage();
     bool endKey = true;
     while (endKey)
@@ -20,16 +21,18 @@ void controller()
         switch ( choice )
         {
             case 1:
-                iplAnalyser.loadIPLData( FileName );
                 sortedList = iplAnalyser.sortBatsMan( batingAverage );
                 inputOutput.displayToUser( sortedList );
                 break;
             case 2:
-                iplAnalyser.loadIPLData( FileName );
                 sortedList = iplAnalyser.sortBatsMan( batingStrike );
                 inputOutput.displayToUser( sortedList );
                 break;
             case 3:
+                sortedList = iplAnalyser.sortBatsMan( foursAndSixes );
+                inputOutput.displayToUser( sortedList );
+                break;
+            case 4:
                 endKey = false;
                 break;
             default:

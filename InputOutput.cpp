@@ -5,7 +5,7 @@ int InputOutput::getUserChoice()
 {
     int choice = 0;
     cout <<"\n==========================\n";
-    cout << "\n1) Top Bating Average \n2) Top Bating Strike \n3) EXIT : ";
+    cout << "\n1) Top Bating Average \n2) Top Bating Strike \n3) Fours And Sixes \n4) EXIT : ";
     cin >> choice;
     return choice;
 }
@@ -17,8 +17,8 @@ void InputOutput::displayWelcomeMessage()
 
 void InputOutput::displayToUser( vector<MostRuns*> sortedList )
 {
-    for (auto i = sortedList.begin(); i != sortedList.begin() + 1; ++i){
-        cout<<"==================================="<<endl;
+    for (auto i = sortedList.begin() + 1; i != sortedList.begin() + 2; ++i){
+        cout<<"\n==================================="<<endl;
         (*i)->display();
     }
 }

@@ -22,7 +22,7 @@ public:
     vector<MostRuns*> sortBatsMan( bool(*sortFunc )(MostRuns*, MostRuns*) )
     {
         vector<MostRuns*> sortedList = statisticList;
-        sort(sortedList.begin(), sortedList.end(), sortFunc );
+        sort(sortedList.begin() + 1, sortedList.end(), sortFunc );
         return sortedList;
     }
 };
