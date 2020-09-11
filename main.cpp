@@ -7,7 +7,7 @@ using namespace std;
 
 enum sortType
 {
-    BAT_AVERAGE = 1, BAT_STRIKE, SIX_AND_FOURS, SR_WITH_6sAND4s, AVERAGE_WITH_SR
+    BAT_AVERAGE = 1, BAT_STRIKE, SIX_AND_FOURS, SR_WITH_6sAND4s, AVERAGE_WITH_SR, RUNS_AVERAGE
 };
 
 string FileName = "MostRunsFile.csv";
@@ -40,7 +40,10 @@ void controller()
             case AVERAGE_WITH_SR:
                 sortedList = iplAnalyser.sortBatsMan( strikeWithAverage );
                 break;
-            case 6:
+            case RUNS_AVERAGE:
+                sortedList = iplAnalyser.sortBatsMan( ransWithAverage );
+                break;
+            case 7:
                 endKey = false;
                 break;
             default:

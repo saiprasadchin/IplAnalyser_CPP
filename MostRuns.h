@@ -32,6 +32,7 @@ public:
     int getFours();
     int getSixes();
     int getFoursAndSixes();
+    int getRuns();
     void display();
 
 };

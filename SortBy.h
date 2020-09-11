@@ -34,3 +34,10 @@ bool compareByStrikeRtWithAverage(MostRuns *avg1, MostRuns *avg2)
 }
 
 auto strikeWithAverage = &compareByStrikeRtWithAverage;
+
+bool compareByMaxRunsWithAverage(MostRuns *avg1, MostRuns *avg2) 
+{ 
+    return (avg1->getRuns() > avg2->getRuns()) && (avg1->getAverage() > avg2->getAverage());
+}
+
+auto ransWithAverage = &compareByMaxRunsWithAverage;
