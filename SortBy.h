@@ -48,3 +48,10 @@ bool compareByBowlingAverage(IPLBowlerCSV *avg1, IPLBowlerCSV *avg2)
 }
 
 auto bowlingAverage = &compareByBowlingAverage;
+
+bool compareByBowlingStrikeRate(IPLBowlerCSV *avg1, IPLBowlerCSV *avg2) 
+{ 
+    return avg1->getStrikeRate() > avg2->getStrikeRate();
+}
+
+auto bowlingStrikeRate = &compareByBowlingStrikeRate;
