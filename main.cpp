@@ -25,6 +25,11 @@ void controller()
                 inputOutput.displayToUser( sortedList );
                 break;
             case 2:
+                iplAnalyser.loadIPLData( FileName );
+                sortedList = iplAnalyser.sortBatsMan( batingStrike );
+                inputOutput.displayToUser( sortedList );
+                break;
+            case 3:
                 endKey = false;
                 break;
             default:

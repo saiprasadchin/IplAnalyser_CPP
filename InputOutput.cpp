@@ -5,7 +5,7 @@ int InputOutput::getUserChoice()
 {
     int choice = 0;
     cout <<"\n==========================\n";
-    cout << "\n1) Top Bating Average \n2) EXIT : ";
+    cout << "\n1) Top Bating Average \n2) Top Bating Strike \n3) EXIT : ";
     cin >> choice;
     return choice;
 }

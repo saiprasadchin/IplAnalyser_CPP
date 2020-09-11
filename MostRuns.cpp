@@ -23,12 +23,19 @@ double MostRuns::convertToDouble( string field )
         return decimal = sum/decimal;
 }
 
-int MostRuns::getAverage()
+
+double MostRuns::getAverage()
 {
     return convertToDouble( batingAverage );
+}
+
+double MostRuns::getStrike()
+{
+    return convertToDouble( strikeRate );
 }
 
 void MostRuns::display() {
     cout << this->playerName <<endl;
     cout << this->batingAverage <<endl;
+    cout << this->strikeRate <<endl;
 }

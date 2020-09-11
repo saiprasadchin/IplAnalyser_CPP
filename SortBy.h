@@ -6,3 +6,10 @@ bool compareByAverage(MostRuns *avg1, MostRuns *avg2)
 }
 
 auto batingAverage = &compareByAverage;
+
+bool compareByStrikeRate(MostRuns *avg1, MostRuns *avg2) 
+{ 
+    return avg1->getStrike() > avg2->getStrike();
+}
+
+auto batingStrike = &compareByStrikeRate;

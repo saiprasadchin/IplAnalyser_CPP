@@ -26,7 +26,8 @@ public:
     MostRuns() {}
     string* getPosition();
     double convertToDouble( string );
-    int getAverage();
+    double getAverage();
+    double getStrike();
     void display();
 
 };
