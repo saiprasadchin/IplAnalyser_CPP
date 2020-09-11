@@ -60,7 +60,8 @@ int MostRuns::getFoursAndSixes()
     return getSixes() + getFours();
 }
 
-void MostRuns::display() {
+void MostRuns::display()
+{
     cout <<"Player Name   : " << this->playerName <<endl;
     cout <<"Bating Avg    : " << this->batingAverage <<endl;
     cout <<"Bating Strike : " << this->strikeRate <<endl;

@@ -5,6 +5,11 @@
 
 using namespace std;
 
+enum sortType
+{
+    BAT_AVERAGE = 1, BAT_STRIKE, SIX_AND_FOURS, SR_WITH_6sAND4s
+};
+
 string FileName = "MostRunsFile.csv";
 
 void controller()
@@ -20,25 +25,26 @@ void controller()
         int choice = inputOutput.getUserChoice();
         switch ( choice )
         {
-            case 1:
+            case BAT_AVERAGE:
                 sortedList = iplAnalyser.sortBatsMan( batingAverage );
-                inputOutput.displayToUser( sortedList );
                 break;
-            case 2:
+            case BAT_STRIKE:
                 sortedList = iplAnalyser.sortBatsMan( batingStrike );
-                inputOutput.displayToUser( sortedList );
                 break;
-            case 3:
+            case SIX_AND_FOURS:
                 sortedList = iplAnalyser.sortBatsMan( foursAndSixes );
-                inputOutput.displayToUser( sortedList );
                 break;
-            case 4:
+            case SR_WITH_6sAND4s:
+                sortedList = iplAnalyser.sortBatsMan( strikeWithfoursAndSixes );
+                break;
+            case 5:
                 endKey = false;
                 break;
             default:
                 cout << "Invalid Input" << endl;
                 break;
         }
+        inputOutput.displayToUser( sortedList );
     }
 }
 
