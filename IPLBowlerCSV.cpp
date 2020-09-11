@@ -28,11 +28,20 @@ double IPLBowlerCSV::getAverage()
     return convertToDouble( average );
 }
 
+double IPLBowlerCSV::getStrikeRate()
+{
+    return convertToDouble( strikeRate );
+}
+
+double IPLBowlerCSV::getEconomy()
+{
+    return convertToDouble( Economy );
+}
+
 void IPLBowlerCSV::display()
 {
     cout <<"Player Name    : " << this->playerName <<endl;
     cout <<"Bowling Avg    : " << this->average <<endl;
-    //cout <<"Bating Strike : " << this->strikeRate <<endl;
-    //cout <<"Four And Six  : " << this->fours <<"  "<< this->sixes <<endl;
-    //cout <<"Runs          : " << this->runs <<endl;
+    cout <<"Bowling Strike : " << this->strikeRate <<endl;
+    cout <<"Economy        : " << this->Economy <<endl;
 }

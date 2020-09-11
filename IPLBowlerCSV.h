@@ -28,5 +28,7 @@ public:
     string* getPosition();
     double convertToDouble( string field );
     double getAverage();
+    double getStrikeRate();
+    double getEconomy();
     void display();
 };
