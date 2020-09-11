@@ -1,14 +1,41 @@
 #include<iostream>
+#include "IplAnalyzer.cpp"
+#include "InputOutput.h"
+#include "SortBy.h"
 
 using namespace std;
 
-void displayWelcomeMessage()
+string FileName = "MostRunsFile.csv";
+
+void controller()
 {
-    cout << "\nWelcome to IplAnalyser Program\n" << endl;
+    IPLAnalyzer iplAnalyser;
+    InputOutput inputOutput;
+    vector<MostRuns*> sortedList;
+    inputOutput.displayWelcomeMessage();
+    bool endKey = true;
+    while (endKey)
+    {
+        int choice = inputOutput.getUserChoice();
+        switch ( choice )
+        {
+            case 1:
+                iplAnalyser.loadIPLData( FileName );
+                sortedList = iplAnalyser.sortBatsMan( batingAverage );
+                inputOutput.displayToUser( sortedList );
+                break;
+            case 2:
+                endKey = false;
+                break;
+            default:
+                cout << "Invalid Input" << endl;
+                break;
+        }
+    }
 }
 
 int main()
 {
-    displayWelcomeMessage();
+    controller();
 	return 0;
 }
