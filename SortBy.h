@@ -97,3 +97,10 @@ bool compareByBestAllrounder( AllRounder *avg1, AllRounder *avg2 )
 }
 
 auto bestAllronder = &compareByBestAllrounder;
+
+bool compareByMaxCenturyAndBestAverage(IPLBatsmanCSV *avg1, IPLBatsmanCSV *avg2) 
+{ 
+    return avg1->getHundredsAndWicket() > avg2->getHundredsAndWicket();
+}
+
+auto maxCenturyWithBestAverage = &compareByMaxCenturyAndBestAverage;

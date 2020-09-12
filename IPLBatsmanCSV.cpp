@@ -74,6 +74,12 @@ int IPLBatsmanCSV::getHundreds()
 {
     return convertToInt( centuries );
 }
+
+double IPLBatsmanCSV::getHundredsAndWicket()
+{
+    return getHundreds() * getAverage();
+}
+
 void IPLBatsmanCSV::display()
 {
     cout <<"Player Name   : " << this->playerName <<endl;

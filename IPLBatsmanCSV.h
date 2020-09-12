@@ -35,6 +35,7 @@ public:
     int getFoursAndSixes();
     int getRuns();
     int getHundreds();
+    double getHundredsAndWicket();
     void display();
 
 };
