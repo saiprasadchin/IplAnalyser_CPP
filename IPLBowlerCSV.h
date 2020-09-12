@@ -37,5 +37,6 @@ public:
     int getTolatWickets();
     double getStrikeRateAndFoursFives();
     double getStrikeRateAverage();
+    double getWicketsWithAverage();
     void display();
 };

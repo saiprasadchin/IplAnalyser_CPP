@@ -79,6 +79,11 @@ double IPLBowlerCSV::getStrikeRateAverage()
     return getStrikeRate() + getAverage();
 }
 
+double IPLBowlerCSV::getWicketsWithAverage()
+{
+    return getTolatWickets();
+}
+
 void IPLBowlerCSV::display()
 {
     cout <<"Player Name    : " << this->playerName <<endl;
@@ -87,4 +92,5 @@ void IPLBowlerCSV::display()
     cout <<"Economy        : " << this->Economy <<endl;
     cout <<"Four wkts      : " << this->fourWickets <<endl;
     cout <<"Five wkts      : "<< this->fiveWickets <<endl;
+    cout <<"Total wkts      : "<< this->totalWickets <<endl;
 }

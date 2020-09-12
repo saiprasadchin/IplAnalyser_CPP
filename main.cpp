@@ -7,7 +7,7 @@ using namespace std;
 
 enum sortType
 {
-    BAT_AVERAGE = 1, BAT_STRIKE, SIX_AND_FOURS, SR_WITH_6sAND4s, AVERAGE_WITH_SR, RUNS_AVERAGE, TOP_BOWLER_AVERAGE, TOP_BOWLER_STRIKERATE, BOWLER_ECONOMY, STRIKE_RATE_WITH_FOURS_FIVE_WKT, BOWLER_STRIKERATE_AVERAGE, EXIT
+    BAT_AVERAGE = 1, BAT_STRIKE, SIX_AND_FOURS, SR_WITH_6sAND4s, AVERAGE_WITH_SR, RUNS_AVERAGE, TOP_BOWLER_AVERAGE, TOP_BOWLER_STRIKERATE, BOWLER_ECONOMY, STRIKE_RATE_WITH_FOURS_FIVE_WKT, BOWLER_STRIKERATE_AVERAGE, WICKETS_AVERAGE, EXIT
 };
 
 string mostRunsFile = "MostRunsFile.csv";
@@ -74,6 +74,10 @@ void controller()
                 break;
             case BOWLER_STRIKERATE_AVERAGE:
                 bowlerList = iplBowlerAnalyser.sortBatsManAndBowler( strikeRateAverage );
+                inputOutput.displayToUser( bowlerList );
+                break;
+            case WICKETS_AVERAGE:
+                bowlerList = iplBowlerAnalyser.sortBatsManAndBowler( wicketsAverage );
                 inputOutput.displayToUser( bowlerList );
                 break;
             case EXIT:

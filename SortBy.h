@@ -76,3 +76,10 @@ bool compareByBowlerStrikeRateAndAverage(IPLBowlerCSV *avg1, IPLBowlerCSV *avg2)
 }
 
 auto strikeRateAverage = &compareByBowlerStrikeRateAndAverage;
+
+bool compareByBowlerWicketsWithAverage(IPLBowlerCSV *avg1, IPLBowlerCSV *avg2) 
+{ 
+    return avg1->getWicketsWithAverage() > avg2->getWicketsWithAverage();
+}
+
+auto wicketsAverage = &compareByBowlerWicketsWithAverage;
