@@ -7,14 +7,14 @@ using namespace std;
 
 class AllRounder
 {
-    string player_name;
+    string playerName;
     double battingAverage, bowlingAverage;
     int runs, wickets, hundreds;
 
 public:
     AllRounder(IPLBatsmanCSV *batsman, IPLBowlerCSV *bowler)
     {
-        this->player_name = batsman->getPlayerName();
+        this->playerName = batsman->getPlayerName();
         this->battingAverage = batsman->getAverage();
         this->bowlingAverage = bowler->getAverage();
         this->runs = batsman->getRuns();
@@ -23,7 +23,7 @@ public:
     }
     void display()
     {
-        cout << "Name            : " << this->player_name << endl;
+        cout << "Name            : " << this->playerName << endl;
         cout << "Batting Average : " << this->battingAverage << endl;
         cout << "Bowling Average : " << this->bowlingAverage << endl;
     }
@@ -31,5 +31,15 @@ public:
     double getBatingAndBallingAverage()
     {
         return battingAverage + bowlingAverage;
+    }
+
+    int getRuns()
+    {
+        return runs;
+    }
+    
+    int getWickets()
+    {
+        return wickets;
     }
 };

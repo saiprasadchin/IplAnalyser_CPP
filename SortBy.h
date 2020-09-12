@@ -88,4 +88,12 @@ bool compareByAllrounderBatingAndBallingAverage( AllRounder *avg1, AllRounder *a
 { 
     return avg1->getBatingAndBallingAverage() > avg2->getBatingAndBallingAverage();
 }
+
 auto allRounderBatingBallingAverage = &compareByAllrounderBatingAndBallingAverage;
+
+bool compareByBestAllrounder( AllRounder *avg1, AllRounder *avg2 ) 
+{ 
+    return (avg1->getRuns() > avg2->getRuns()) && (avg1->getWickets() > avg2->getWickets());
+}
+
+auto bestAllronder = &compareByBestAllrounder;
