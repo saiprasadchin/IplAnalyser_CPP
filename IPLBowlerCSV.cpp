@@ -34,6 +34,12 @@ int IPLBowlerCSV::convertToInt( string field )
     }
     return sum;
 }
+
+string IPLBowlerCSV::getPlayerName()
+{
+    return playerName;
+}
+
 double IPLBowlerCSV::getAverage()
 {
     return convertToDouble( average );

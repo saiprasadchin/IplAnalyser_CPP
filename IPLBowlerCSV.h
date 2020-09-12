@@ -28,6 +28,7 @@ public:
     string* getPosition();
     double convertToDouble( string );
     int convertToInt( string );
+    string getPlayerName();
     double getAverage();
     double getStrikeRate();
     double getEconomy();

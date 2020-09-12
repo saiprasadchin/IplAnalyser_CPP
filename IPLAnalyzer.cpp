@@ -2,6 +2,7 @@
 #include<vector>
 #include "IPLBatsmanCSV.h"
 #include "IPLBowlerCSV.h"
+#include "AllRounder.h"
 #include "CsvFileOperation.cpp"
 #include <algorithm>
 
@@ -26,6 +27,11 @@ public:
         vector<T*> sortedList = statisticList;
         sort(sortedList.begin() + 1, sortedList.end(), sortFunc );
         return sortedList;
+    }
+
+    void loadIPLData( vector<T*> List )
+    {
+        statisticList = List;
     }
 
     vector<T*> findAll()

@@ -25,6 +25,7 @@ private:
 public:
     IPLBatsmanCSV() {}
     string* getPosition();
+    string getPlayerName();
     double convertToDouble( string );
     int convertToInt( string );
     double getAverage();
@@ -33,6 +34,7 @@ public:
     int getSixes();
     int getFoursAndSixes();
     int getRuns();
+    int getHundreds();
     void display();
 
 };

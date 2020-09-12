@@ -3,6 +3,7 @@
 #include<vector>
 #include "IPLBatsmanCSV.h"
 #include "IPLBowlerCSV.h"
+#include "AllRounder.h"
 
 using namespace std;
 
@@ -12,4 +13,5 @@ public:
     void displayWelcomeMessage();
     void displayToUser( vector<IPLBatsmanCSV*> );
     void displayToUser( vector<IPLBowlerCSV*> );
+    void displayToUser( vector<AllRounder*> );
 };

@@ -83,3 +83,9 @@ bool compareByBowlerWicketsWithAverage(IPLBowlerCSV *avg1, IPLBowlerCSV *avg2)
 }
 
 auto wicketsAverage = &compareByBowlerWicketsWithAverage;
+
+bool compareByAllrounderBatingAndBallingAverage( AllRounder *avg1, AllRounder *avg2 ) 
+{ 
+    return avg1->getBatingAndBallingAverage() > avg2->getBatingAndBallingAverage();
+}
+auto allRounderBatingBallingAverage = &compareByAllrounderBatingAndBallingAverage;

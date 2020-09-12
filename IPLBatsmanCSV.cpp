@@ -5,6 +5,11 @@ string* IPLBatsmanCSV::getPosition()
     return &POS;
 }
 
+string IPLBatsmanCSV::getPlayerName()
+{
+    return playerName;
+}
+
 double IPLBatsmanCSV::convertToDouble( string field )
 {
     int sum = 0;
@@ -65,6 +70,10 @@ int IPLBatsmanCSV::getRuns()
     return convertToInt( runs );
 }
 
+int IPLBatsmanCSV::getHundreds()
+{
+    return convertToInt( centuries );
+}
 void IPLBatsmanCSV::display()
 {
     cout <<"Player Name   : " << this->playerName <<endl;
