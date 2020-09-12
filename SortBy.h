@@ -62,3 +62,10 @@ bool compareByBowlingEconomy(IPLBowlerCSV *avg1, IPLBowlerCSV *avg2)
 }
 
 auto bowlingEconomy = &compareByBowlingEconomy;
+
+bool compareByBowlerStrikeRate4sAnd5swkt(IPLBowlerCSV *avg1, IPLBowlerCSV *avg2) 
+{ 
+    return avg1->getStrikeRateAndFoursFives() > avg2->getStrikeRateAndFoursFives();
+}
+
+auto strikeRate4sAnd5sWkt = &compareByBowlerStrikeRate4sAnd5swkt;

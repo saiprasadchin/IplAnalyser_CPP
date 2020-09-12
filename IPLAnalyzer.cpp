@@ -27,4 +27,9 @@ public:
         sort(sortedList.begin() + 1, sortedList.end(), sortFunc );
         return sortedList;
     }
+
+    vector<T*> findAll()
+    {
+        return statisticList;
+    }
 };
