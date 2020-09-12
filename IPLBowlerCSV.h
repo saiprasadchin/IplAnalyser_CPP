@@ -36,5 +36,6 @@ public:
     int getFourAndFiveWickets();
     int getTolatWickets();
     double getStrikeRateAndFoursFives();
+    double getStrikeRateAverage();
     void display();
 };

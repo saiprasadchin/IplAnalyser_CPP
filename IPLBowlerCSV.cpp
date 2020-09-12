@@ -74,6 +74,11 @@ double IPLBowlerCSV::getStrikeRateAndFoursFives()
     return getStrikeRate() * getFourAndFiveWickets();
 }
 
+double IPLBowlerCSV::getStrikeRateAverage()
+{
+    return getStrikeRate() + getAverage();
+}
+
 void IPLBowlerCSV::display()
 {
     cout <<"Player Name    : " << this->playerName <<endl;

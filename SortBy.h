@@ -69,3 +69,10 @@ bool compareByBowlerStrikeRate4sAnd5swkt(IPLBowlerCSV *avg1, IPLBowlerCSV *avg2)
 }
 
 auto strikeRate4sAnd5sWkt = &compareByBowlerStrikeRate4sAnd5swkt;
+
+bool compareByBowlerStrikeRateAndAverage(IPLBowlerCSV *avg1, IPLBowlerCSV *avg2) 
+{ 
+    return avg1->getStrikeRateAverage() > avg2->getStrikeRateAverage();
+}
+
+auto strikeRateAverage = &compareByBowlerStrikeRateAndAverage;
