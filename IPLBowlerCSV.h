@@ -26,8 +26,15 @@ private:
 public:
     IPLBowlerCSV() {}
     string* getPosition();
-    double convertToDouble( string field );
+    double convertToDouble( string );
+    int convertToInt( string );
     double getAverage();
     double getStrikeRate();
+    double getEconomy();
+    int getFourWickets();
+    int getFiveWickets();
+    int getFourAndFiveWickets();
+    int getTolatWickets();
+    double getStrikeRateAndFoursFives();
     void display();
 };
